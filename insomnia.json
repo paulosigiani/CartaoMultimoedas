@@ -1,0 +1,98 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-06-30T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2025.6.30",
+  "resources": [
+    {
+      "_id": "fld_cartao_teste",
+      "_type": "request_group",
+      "name": "cartao-teste",
+      "parentId": null
+    },
+    {
+      "_id": "req_criar_cartao",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Criar Cartão",
+      "method": "POST",
+      "url": "http://localhost:8080/cartao",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nomeTitular\": \"Ana Silva\",\n  \"cpfTitular\": \"12345678901\",\n  \"senha\": \"123456\"\n}"
+      }
+    },
+    {
+      "_id": "req_consultar_cartao",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Consultar Cartão",
+      "method": "GET",
+      "url": "http://localhost:8080/cartao/6667501111222233"
+    },
+    {
+      "_id": "req_simular_carga",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Simular Carga",
+      "method": "POST",
+      "url": "http://localhost:8080/cartao/carga/simular",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaDestino\": \"USD\",\n  \"valorCargaRealBrasileiro\": 1000.00\n}"
+      }
+    },
+    {
+      "_id": "req_confirmar_carga",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Confirmar Carga",
+      "method": "POST",
+      "url": "http://localhost:8080/cartao/carga/confirmar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaDestino\": \"USD\",\n  \"valorCargaRealBrasileiro\": 1000.00\n}"
+      }
+    },
+    {
+      "_id": "req_simular_saque",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Simular Saque",
+      "method": "POST",
+      "url": "http://localhost:8080/cartao/saque/simular",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaOrigem\": \"USD\",\n  \"valorSaqueMoedaEstrangeiraOrigem\": 100.00\n}"
+      }
+    },
+    {
+      "_id": "req_confirmar_saque",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Confirmar Saque",
+      "method": "POST",
+      "url": "http://localhost:8080/cartao/saque/confirmar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaOrigem\": \"USD\",\n  \"valorSaqueMoedaEstrangeiraOrigem\": 100.00\n}"
+      }
+    },
+    {
+      "_id": "req_taxa_conversao",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Consultar Taxa de Conversão",
+      "method": "GET",
+      "url": "http://localhost:8080/conversao/taxa/BRL/USD"
+    },
+    {
+      "_id": "req_converter_valor",
+      "_type": "request",
+      "parentId": "fld_cartao_teste",
+      "name": "Converter Valor",
+      "method": "GET",
+      "url": "http://localhost:8080/conversao/converter/1000/BRL/USD"
+    }
+  ]
+}

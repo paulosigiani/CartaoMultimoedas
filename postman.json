@@ -1,0 +1,153 @@
+{
+  "info": {
+    "_postman_id": "cartaomultimoedas-collection-2025-06-30",
+    "name": "Cartao Multimoedas API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "cartao-teste",
+      "item": [
+        {
+          "name": "Criar Cartão",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomeTitular\": \"Ana Silva\",\n  \"cpfTitular\": \"12345678901\",\n  \"senha\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/cartao",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["cartao"]
+            }
+          }
+        },
+        {
+          "name": "Consultar Cartão",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/cartao/6667501111222233",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["cartao", "6667501111222233"]
+            }
+          }
+        },
+        {
+          "name": "Simular Carga",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaDestino\": \"USD\",\n  \"valorCargaRealBrasileiro\": 1000.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/cartao/carga/simular",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["cartao", "carga", "simular"]
+            }
+          }
+        },
+        {
+          "name": "Confirmar Carga",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaDestino\": \"USD\",\n  \"valorCargaRealBrasileiro\": 1000.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/cartao/carga/confirmar",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["cartao", "carga", "confirmar"]
+            }
+          }
+        },
+        {
+          "name": "Simular Saque",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaOrigem\": \"USD\",\n  \"valorSaqueMoedaEstrangeiraOrigem\": 100.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/cartao/saque/simular",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["cartao", "saque", "simular"]
+            }
+          }
+        },
+        {
+          "name": "Confirmar Saque",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numeroCartao\": \"6667501111222233\",\n  \"moedaOrigem\": \"USD\",\n  \"valorSaqueMoedaEstrangeiraOrigem\": 100.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/cartao/saque/confirmar",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["cartao", "saque", "confirmar"]
+            }
+          }
+        },
+        {
+          "name": "Consultar Taxa de Conversão",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/conversao/taxa/BRL/USD",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["conversao", "taxa", "BRL", "USD"]
+            }
+          }
+        },
+        {
+          "name": "Converter Valor",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/conversao/converter/1000/BRL/USD",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["conversao", "converter", "1000", "BRL", "USD"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
